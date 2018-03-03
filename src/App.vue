@@ -177,6 +177,6 @@ body {
 }
 
 .dropzone .dz-preview {
-  display: none;
+  display: none !important;
 }
 </style>
