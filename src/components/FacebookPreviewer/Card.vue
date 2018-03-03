@@ -183,6 +183,53 @@ export default {
 }
 
 
+/* feed card */
+.fp.android.feed-card {
+  max-width: 540px;
+  width: 540px;
+  padding-bottom: 10px;
+  background-color: #F0F1F3;
+}
+.fp.android.feed-card .preview.image {
+  width: 540px;
+  height: 283px;
+  border-bottom: none;
+}
+
+.fp.android.feed-card .preview.text {
+  height: 58px;
+  margin: 0 12px;
+  display: block;
+  overflow: hidden;
+}
+.fp.android.feed-card .preview.text .detail.title {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16px;
+  margin-bottom: 0px;
+  max-height: 32px;
+  width: 100%;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+}
+.fp.android.feed-card .preview.text .detail.text {
+  height: 18px;
+  width: 100%;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 1;
+}
+.fp.android.feed-card .preview.text .detail.url {
+  text-transform: uppercase;
+  order: 0;
+  font-size: 11px;
+  color: #90949c;
+  font-family: Roboto, Arial, sans-serif;
+  margin-bottom: -2px;
+}
+
+
 /* Mini card */
 .fp.mini-card {
   max-width: 360px;

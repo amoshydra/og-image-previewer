@@ -25,6 +25,7 @@
     <h2>Facebook Post</h2>
     <CardWrapper>
       <Card type="feed" :data="cardInfo" />
+      <Card type="android feed" :data="cardInfo" />
     </CardWrapper>
 
     <h2>Facebook Chat</h2>
