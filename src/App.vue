@@ -51,19 +51,19 @@ export default {
       return new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
-        reader.onload = function () {
+        reader.onload = () => {
           resolve(reader.result);
         };
-        reader.onerror = function (error) {
+        reader.onerror = (error) => {
           reject(error);
         };
-      })
+      });
     },
     updatePreview(file) {
       this.getBase64(file)
         .then((dataUrl) => {
           this.previewUrl = dataUrl;
-        })
+        });
     },
   },
 };

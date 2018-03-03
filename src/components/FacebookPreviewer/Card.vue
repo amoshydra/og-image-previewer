@@ -19,7 +19,7 @@ export default {
   props: {
     type: {
       type: String,
-      default: 'mini'
+      default: 'mini',
     },
     data: {
       type: Object,
@@ -27,10 +27,10 @@ export default {
   },
   computed: {
     cardType() {
-      return this.type + '-card';
+      return `${this.type}-card`;
     },
   },
-}
+};
 </script>
 
 <style>

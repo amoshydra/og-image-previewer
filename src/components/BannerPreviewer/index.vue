@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Viddsee Banner</h1>
-    
+
     <h2>Mobile</h2>
     <div class="banner-container mobile">
       <div class="aspect r-16-9" :style="backgroundStyle"></div>
@@ -11,7 +11,7 @@
     <div class="banner-container desktop">
       <div class="aspect r-3-1" :style="backgroundStyle"></div>
     </div>
-    
+
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
         backgroundImage: `url("${this.src}")`,
       };
     },
-  }
+  },
 };
 </script>
 
@@ -41,7 +41,7 @@ export default {
   width: 100%;
 }
 .banner-container.mobile {
-  width: 480px;  
+  width: 480px;
 }
 
 .aspect {
