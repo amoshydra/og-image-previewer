@@ -51,8 +51,12 @@ export default {
 .preview.text .detail {
   order: 1;
 }
+.preview.text .detail.url {
+  text-transform: lowercase;
+}
 .preview.text .detail.title {
   font-weight: bold;
+  overflow: hidden;
 }
 
 .preview.image img {
@@ -147,7 +151,7 @@ export default {
 .fp.feed-card .preview.text {
   height: auto;
   margin: 10px 12px;
-  max-height: 100px;
+  /* max-height: 100px; */
 }
 .fp.feed-card .preview.text .detail.title {
   font-family: Georgia, serif;
