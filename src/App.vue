@@ -13,10 +13,22 @@
     <div class="previewer" style="position: relative; z-index: 100;">
       <input
         v-model="requestedUrl"
-        style="width: calc(100% - 100px); padding: 8px;"
+        style="
+          box-sizing: border-box;
+          width: calc(100% - 100px);
+          padding: 10px 8px;
+          border: 1px solid rgba(0,0,0,0.1);
+        "
         placeholder="picture url"
       >
-      <button @click="requestUrl" style="width: 70px; padding: 8px;">Request</button>
+      <button
+        @click="requestUrl"
+        style="
+          box-sizing: border-box;
+          width: 90px;
+          padding: 10px 8px;
+          border: none;
+        ">Use image</button>
     </div>
     <div class="previewer">
       <BannerPreviewer
@@ -94,13 +106,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #F3f3f3;
-  padding: 24px;
+  padding-top: 24px;
 }
 
 .previewer {
   margin-top: 24px;
   margin-bottom: 64px;
-  padding: 24px 64px;
+  margin-left: 24px;
+  margin-right: 24px;
+  padding: 24px 8px;
   padding-bottom: 48px;
   max-width: 1200px;
   margin-left: auto;
@@ -108,18 +122,39 @@ body {
   background-color: #FFF;
 }
 
+@media (min-width: 480px) {
+  .previewer {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .previewer {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+}
+
 .dropzone {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.99);
+  background: rgba(255, 255, 255, 1);
   z-index: 1;
   cursor: pointer;
+}
+
+.dropzone .dz-default.dz-message {
+  font-size: 32px;
+}
+.dropzone.has-picture .dz-default.dz-message {
+  display: none;
 }
 
 .dropzone.has-picture,
@@ -129,15 +164,11 @@ body {
 }
 
 .dropzone.vue-dropzone:hover {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.99);
 }
 .dropzone.has-picture.vue-dropzone:hover,
 .dropzone.dz-started.vue-dropzone:hover {
   background: rgba(255, 255, 255, 0.0);
-}
-
-.has-picture .dz-default.dz-message {
-  display: none;
 }
 
 .dropzone.dz-drag-hover {
