@@ -53,6 +53,9 @@ export default {
 }
 .preview.text .detail.url {
   text-transform: lowercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .preview.text .detail.title {
   font-weight: bold;
