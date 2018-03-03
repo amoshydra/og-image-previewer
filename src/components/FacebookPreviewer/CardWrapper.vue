@@ -1,11 +1,16 @@
-<template>
+<template functional>
   <div class="card-wrapper">
-    <slot></slot>
+    <slot />
   </div>
 </template>
 
 <script>
 export default {
+  render(createElement, context) {
+    return createElement(
+      context.children,
+    );
+  },
 };
 </script>
 
