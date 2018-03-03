@@ -4,11 +4,20 @@
     <vue-dropzone
       id="dropzone"
       class="dropzone"
+      :class="!!previewUrl ? 'has-picture' : ''"
       ref="myVueDropzone"
       :options="dropzoneOptions"
       @vdropzone-thumbnail="updatePreview"
     />
 
+    <div class="previewer" style="position: relative; z-index: 100;">
+      <input
+        v-model="requestedUrl"
+        style="width: calc(100% - 100px); padding: 8px;"
+        placeholder="picture url"
+      >
+      <button @click="requestUrl" style="width: 70px; padding: 8px;">Request</button>
+    </div>
     <div class="previewer">
       <BannerPreviewer
         :src="previewUrl"
@@ -43,6 +52,7 @@ export default {
         dictDefaultMessage: 'Drop image to preview',
         autoProcessQueue: false,
       },
+      requestedUrl: '',
       previewUrl: false,
     };
   },
@@ -64,6 +74,11 @@ export default {
         .then((dataUrl) => {
           this.previewUrl = dataUrl;
         });
+    },
+    requestUrl() {
+      if (this.requestedUrl && this.requestedUrl.trim()) {
+        this.previewUrl = this.requestedUrl;
+      }
     },
   },
 };
@@ -102,20 +117,27 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.99);
   z-index: 1;
+  cursor: pointer;
 }
 
+.dropzone.has-picture,
 .dropzone.dz-started {
   background: rgba(255, 255, 255, 0.0);
   z-index: 0;
 }
 
 .dropzone.vue-dropzone:hover {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
 }
+.dropzone.has-picture.vue-dropzone:hover,
 .dropzone.dz-started.vue-dropzone:hover {
   background: rgba(255, 255, 255, 0.0);
+}
+
+.has-picture .dz-default.dz-message {
+  display: none;
 }
 
 .dropzone.dz-drag-hover {
