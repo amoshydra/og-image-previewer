@@ -279,7 +279,7 @@ export default {
 }
 .fp.app.chat.mini-card .preview.text .detail.title {
   font-size: 16px;
-  max-height: 32px;
+  max-height: 36px;
   margin-bottom: 8px;
 }
 .fp.app.chat.mini-card .preview.text .detail.url {
