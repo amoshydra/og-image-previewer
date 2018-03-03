@@ -52,7 +52,7 @@ export default {
         dictDefaultMessage: 'Drop image to preview',
         autoProcessQueue: false,
       },
-      requestedUrl: '',
+      requestedUrl: 'https://images.pexels.com/photos/255419/pexels-photo-255419.jpeg?w=3840&h=1280&auto=compress&cs=tinysrgb',
       previewUrl: false,
     };
   },
