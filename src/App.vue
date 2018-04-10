@@ -58,14 +58,16 @@ export default {
     vueDropzone: vue2Dropzone,
   },
   data() {
+    const searchString = location.search.match(/\?i=(.*)/);
+    const queryUrl = searchString ? searchString[1] : null;
     return {
       dropzoneOptions: {
         url: ' ',
-        dictDefaultMessage: 'Drop image to preview',
+        dictDefaultMessage: 'Drop image to previeyw',
         autoProcessQueue: false,
       },
-      requestedUrl: 'https://images.pexels.com/photos/255419/pexels-photo-255419.jpeg?w=3840&h=1280&auto=compress&cs=tinysrgb',
-      previewUrl: false,
+      requestedUrl: queryUrl || 'https://images.pexels.com/photos/255419/pexels-photo-255419.jpeg?w=3840&h=1280&auto=compress&cs=tinysrgb',
+      previewUrl: queryUrl || false,
     };
   },
   methods: {
